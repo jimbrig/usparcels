@@ -1,0 +1,33 @@
+{
+  "statefp": "48",
+  "state_name": "Texas",
+  "format": "FlatGeoBuf",
+  "source": "LR_PARCEL_NATIONWIDE_FILE_US_2026_Q1.gpkg",
+  "schema_version": "2026.1",
+  "validated_at": "2026-04-10T19:34:01Z",
+  "gdal_version": "3.12.3",
+  "file_size_bytes": 9723927168,
+  "feature_count": 13689455,
+  "manifest_count": 13690003,
+  "count_diff": -548,
+  "geometry_type": "MultiPolygon",
+  "geometry_column": "geom",
+  "crs": "EPSG:4326",
+  "bbox": [
+    -106.6460515,
+    25.8372152,
+    -93.5075498,
+    36.5014636
+  ],
+  "spatial_index": "hilbert",
+  "column_count": 47,
+  "dropped_columns": [
+    "parcelstate",
+    "lrversion",
+    "halfbaths",
+    "fullbaths"
+  ],
+  "has_header_metadata": false,
+  "status": "pass",
+  "notes": "-548 excluded (empty geom via -spat filter)"
+}

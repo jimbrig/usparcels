@@ -1,1 +1,2 @@
-statefp,state_name,status,fgb_features,manifest_features,feature_diff,fgb_size_mb,col_count,cols_ok,drops_ok,geom_type,crs,spatial_index,invalid_geom_count,wrong_statefp,notes
+statefp,state_name,status,fgb_features,manifest_features,feature_diff,fgb_size_mb,col_count,cols_ok,drops_ok,geom_type,crs,has_header_meta,notes
+44,Rhode Island,pass,195465,195474,-9,109.9,47,true,true,MultiPolygon,EPSG:4326,true,"-9 excluded (empty geom via -spat filter)"

@@ -1,0 +1,136 @@
+{
+  "type": "Collection",
+  "id": "us-parcels-flatgeobuf",
+  "title": "US Parcels - FlatGeoBuf",
+  "description": "Per-state FlatGeoBuf extractions from LR_PARCEL_NATIONWIDE_FILE_US_2026_Q1.gpkg. 47-column cleaned schema (drops: parcelstate, lrversion, halfbaths, fullbaths). Hilbert-packed spatial index. EPSG:4326.",
+  "schema_version": "2026.1",
+  "source": "LR_PARCEL_NATIONWIDE_FILE_US_2026_Q1.gpkg",
+  "crs": "EPSG:4326",
+  "geometry_column": "geom",
+  "spatial_index": "hilbert",
+  "column_count": 47,
+  "dropped_columns": [
+    "parcelstate",
+    "lrversion",
+    "halfbaths",
+    "fullbaths"
+  ],
+  "tigris_bucket": "noclocks-parcels",
+  "tigris_prefix": "flatgeobuf/",
+  "links": [
+    {
+      "rel": "self",
+      "href": "./catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        -106.6460515,
+        25.8372152,
+        -71.1210433,
+        41.9091718
+      ]
+    }
+  },
+  "updated_at": "2026-04-10T19:38:42Z",
+  "item_count": 5,
+  "items": [
+    {
+      "statefp": "11",
+      "state_name": "District of Columbia",
+      "status": "pass",
+      "validated_at": "2026-04-10T19:34:00Z",
+      "feature_count": 146392,
+      "file_size_bytes": 70486400,
+      "bbox": [
+        -77.1140983,
+        38.8103912,
+        -76.9096791,
+        38.995288
+      ],
+      "has_header_metadata": true,
+      "tigris_href": "https://noclocks-parcels.t3.storage.dev/flatgeobuf/statefp=11/parcels.fgb",
+      "sidecar_href": "https://noclocks-parcels.t3.storage.dev/flatgeobuf/statefp=11/parcels.fgb.json",
+      "local_href": "./statefp=11/parcels.fgb",
+      "sidecar_local": "./statefp=11/parcels.fgb.json"
+    },
+    {
+      "statefp": "13",
+      "state_name": "Georgia",
+      "status": "pass",
+      "validated_at": "2026-04-10T19:34:00Z",
+      "feature_count": 4754448,
+      "file_size_bytes": 3015700216,
+      "bbox": [
+        -85.6053381,
+        30.3556563,
+        -80.8397834,
+        35.0186228
+      ],
+      "has_header_metadata": false,
+      "tigris_href": "https://noclocks-parcels.t3.storage.dev/flatgeobuf/statefp=13/parcels.fgb",
+      "sidecar_href": "https://noclocks-parcels.t3.storage.dev/flatgeobuf/statefp=13/parcels.fgb.json",
+      "local_href": "./statefp=13/parcels.fgb",
+      "sidecar_local": "./statefp=13/parcels.fgb.json"
+    },
+    {
+      "statefp": "37",
+      "state_name": "North Carolina",
+      "status": "pass",
+      "validated_at": "2026-04-10T19:34:00Z",
+      "feature_count": 5756891,
+      "file_size_bytes": 4336402464,
+      "bbox": [
+        -84.3218099,
+        33.8415816,
+        -75.4610535,
+        36.5884857
+      ],
+      "has_header_metadata": false,
+      "tigris_href": "https://noclocks-parcels.t3.storage.dev/flatgeobuf/statefp=37/parcels.fgb",
+      "sidecar_href": "https://noclocks-parcels.t3.storage.dev/flatgeobuf/statefp=37/parcels.fgb.json",
+      "local_href": "./statefp=37/parcels.fgb",
+      "sidecar_local": "./statefp=37/parcels.fgb.json"
+    },
+    {
+      "statefp": "44",
+      "state_name": "Rhode Island",
+      "status": "pass",
+      "validated_at": "2026-04-10T19:38:42Z",
+      "feature_count": 195465,
+      "file_size_bytes": 115248960,
+      "bbox": [
+        -71.8598237,
+        41.147906,
+        -71.1210433,
+        41.9091718
+      ],
+      "has_header_metadata": true,
+      "tigris_href": "https://noclocks-parcels.t3.storage.dev/flatgeobuf/statefp=44/parcels.fgb",
+      "sidecar_href": "https://noclocks-parcels.t3.storage.dev/flatgeobuf/statefp=44/parcels.fgb.json",
+      "local_href": "./statefp=44/parcels.fgb",
+      "sidecar_local": "./statefp=44/parcels.fgb.json"
+    },
+    {
+      "statefp": "48",
+      "state_name": "Texas",
+      "status": "pass",
+      "validated_at": "2026-04-10T19:34:01Z",
+      "feature_count": 13689455,
+      "file_size_bytes": 9723927168,
+      "bbox": [
+        -106.6460515,
+        25.8372152,
+        -93.5075498,
+        36.5014636
+      ],
+      "has_header_metadata": false,
+      "tigris_href": "https://noclocks-parcels.t3.storage.dev/flatgeobuf/statefp=48/parcels.fgb",
+      "sidecar_href": "https://noclocks-parcels.t3.storage.dev/flatgeobuf/statefp=48/parcels.fgb.json",
+      "local_href": "./statefp=48/parcels.fgb",
+      "sidecar_local": "./statefp=48/parcels.fgb.json"
+    }
+  ]
+}

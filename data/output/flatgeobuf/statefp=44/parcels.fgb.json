@@ -1,0 +1,33 @@
+{
+  "statefp": "44",
+  "state_name": "Rhode Island",
+  "format": "FlatGeoBuf",
+  "source": "LR_PARCEL_NATIONWIDE_FILE_US_2026_Q1.gpkg",
+  "schema_version": "2026.1",
+  "validated_at": "2026-04-10T19:38:42Z",
+  "gdal_version": "3.12.3",
+  "file_size_bytes": 115248960,
+  "feature_count": 195465,
+  "manifest_count": 195474,
+  "count_diff": -9,
+  "geometry_type": "MultiPolygon",
+  "geometry_column": "geom",
+  "crs": "EPSG:4326",
+  "bbox": [
+    -71.8598237,
+    41.147906,
+    -71.1210433,
+    41.9091718
+  ],
+  "spatial_index": "hilbert",
+  "column_count": 47,
+  "dropped_columns": [
+    "parcelstate",
+    "lrversion",
+    "halfbaths",
+    "fullbaths"
+  ],
+  "has_header_metadata": true,
+  "status": "pass",
+  "notes": "-9 excluded (empty geom via -spat filter)"
+}

@@ -1,0 +1,33 @@
+{
+  "statefp": "37",
+  "state_name": "North Carolina",
+  "format": "FlatGeoBuf",
+  "source": "LR_PARCEL_NATIONWIDE_FILE_US_2026_Q1.gpkg",
+  "schema_version": "2026.1",
+  "validated_at": "2026-04-10T19:34:00Z",
+  "gdal_version": "3.12.3",
+  "file_size_bytes": 4336402464,
+  "feature_count": 5756891,
+  "manifest_count": 5756891,
+  "count_diff": 0,
+  "geometry_type": "MultiPolygon",
+  "geometry_column": "geom",
+  "crs": "EPSG:4326",
+  "bbox": [
+    -84.3218099,
+    33.8415816,
+    -75.4610535,
+    36.5884857
+  ],
+  "spatial_index": "hilbert",
+  "column_count": 47,
+  "dropped_columns": [
+    "parcelstate",
+    "lrversion",
+    "halfbaths",
+    "fullbaths"
+  ],
+  "has_header_metadata": false,
+  "status": "pass",
+  "notes": ""
+}
