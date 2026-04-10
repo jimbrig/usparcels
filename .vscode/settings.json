@@ -1,0 +1,10 @@
+{
+  "yaml.customTags": [
+    "!expr scalar"
+  ],
+  "[r]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "Posit.air-vscode"
+  },
+  "r.rterm.linux": "${workspaceFolder}/.pixi/envs/default/bin/radian"
+}

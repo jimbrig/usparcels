@@ -1,0 +1,4 @@
+[2026-04-09T02:28:13] starting NC FGB extraction
+Warning 1: Invalid content for record 136813884 in column saledate: 
+[2026-04-09T02:34:24] done, exit code: 0
+-rw-r--r-- 1 jimmy jimmy 4.1G Apr  9 02:34 data/output/flatgeobuf/state=37/parcels.fgb

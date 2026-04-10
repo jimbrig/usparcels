@@ -1,0 +1,122 @@
+{
+  "mcpServers": {
+    "exa": {
+      "type": "http",
+      "url": "https://mcp.exa.ai/mcp?exaApiKey=${env:EXA_API_KEY}",
+      "envFile": "${workspaceFolder}/.cursor/mcp.env",
+      "env": {
+        "EXA_API_KEY": "${env:EXA_API_KEY}"
+      }
+    },
+    "tavily": {
+      "type": "http",
+      "url": "https://mcp.tavily.com/mcp/?tavilyApiKey=${env:TAVILY_API_KEY}",
+      "envFile": "${workspaceFolder}/.cursor/mcp.env",
+      "env": {
+        "TAVILY_API_KEY": "${env:TAVILY_API_KEY}"
+      }
+    },
+    "mapbox-mcp": {
+      "type": "http",
+      "url": "https://mcp.mapbox.com/mcp"
+    },
+    "tigris": {
+      "type": "http",
+      "url": "https://mcp.storage.dev/mcp",
+      "headers": {},
+      "envFile": "${workspaceFolder}/.cursor/mcp.env",
+      "env": {
+        "TIGRIS_STORAGE_ACCESS_KEY_ID": "${env:TIGRIS_STORAGE_ACCESS_KEY_ID}",
+        "TIGRIS_STORAGE_SECRET_ACCESS_KEY": "${env:TIGRIS_STORAGE_SECRET_ACCESS_KEY}"
+      }
+    },
+    "repomix": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": [
+        "--bun",
+        "-y",
+        "repomix",
+        "--mcp"
+      ]
+    },    
+    "r-btw": {
+      "type": "stdio",
+      "command": "Rscript",
+      "args": ["--vanilla", "-e", "btw::btw_mcp_server()"]
+    },
+    "firecrawl": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": [
+        "--bun",
+        "-y",
+        "firecrawl-mcp@latest"
+      ],
+      "env": {
+        "FIRECRAWL_API_KEY": "${env:FIRECRAWL_API_KEY}"
+      },
+      "envFile": "${workspaceFolder}/.cursor/mcp.env"
+    },    
+    "postgres": {
+      "type": "stdio",
+      "envFile": "${workspaceFolder}/.cursor/mcp.env",
+      "env": {
+        "PG_URI": "postgresql://postgres:${input:pg_password}@localhost:5432/postgres"
+      },
+      "command": "bunx",
+      "args": [
+        "--bun",
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "${env:PG_URI}"
+      ]
+    },    
+    "github": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["--bun", "-y", "@modelcontextprotocol/server-github"],
+      "envFile": "${workspaceFolder}/.cursor/mcp.env",
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${env:GITHUB_PAT}"
+      }
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["--bun", "-y", "playwright-mcp@latest"]
+    }    
+  },
+  "inputs": [
+    {
+      "id": "pg_password",
+      "type": "promptString",
+      "description": "Enter the password for PostgreSQL connection",
+      "password": true
+    },
+    {
+      "id": "context7_api_key",
+      "type": "promptString",
+      "description": "Context7 API Key (get from https://context7.com/account/api-keys)",
+      "password": true
+    },
+    {
+      "id": "exa_api_key",
+      "type": "promptString",
+      "description": "Exa API Key (get from https://exa.ai/account/api-keys)",
+      "password": true
+    },
+    {
+      "id": "firecrawl_api_key",
+      "type": "promptString",
+      "description": "Firecrawl API Key (get from https://www.firecrawl.dev/app/api-keys)",
+      "password": true
+    },
+    {
+      "id": "tavily_api_key",
+      "type": "promptString",
+      "description": "Tavily API Key (get from https://tavily.com/account/api-keys)",
+      "password": true
+    }
+  ]
+}

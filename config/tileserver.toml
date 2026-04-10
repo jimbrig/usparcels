@@ -1,0 +1,15 @@
+# root-level options must be first (before [sections])
+# fonts = "/assets/fonts"
+# files = "/assets/files"
+
+[server]
+host = "0.0.0.0"
+port = 8080
+cors_origins = ["*"]
+
+[telemetry]
+enabled = false
+
+[[sources]]
+
+[[styles]]

@@ -1,0 +1,99 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataBiases": "cr:dataBiases",
+    "dataCollection": "cr:dataCollection",
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isEnumeration": "cr:isEnumeration",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "personalSensitiveInformation": "cr:personalSensitiveInformation",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "wd": "https://www.wikidata.org/wiki/"
+  },
+  "alternateName": "Landrecords.us US Nationwide Parcel Layer",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "license": {
+    "@type": "sc:CreativeWork",
+    "name": "Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)",
+    "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  },
+  "distribution": [
+    {
+      "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/landrecordsus/us-parcel-layer?datasetVersionNumber=1",
+      "contentSize": "43.45 GB",
+      "md5": "sg8KdX/\u002Bkzxs6AT8wmTBVA==",
+      "encodingFormat": "application/zip",
+      "@id": "archive.zip",
+      "@type": "cr:FileObject",
+      "name": "archive.zip",
+      "description": "Archive containing all the contents of the US Parcel Layer dataset"
+    }
+  ],
+  "version": 1,
+  "keywords": [
+    "analysis \u003E geospatial analysis",
+    "subject \u003E people and society \u003E business \u003E real estate",
+    "subject \u003E people and society \u003E business \u003E real estate \u003E housing",
+    "geography and places \u003E north america \u003E united states",
+    "subject \u003E people and society \u003E law \u003E government"
+  ],
+  "isAccessibleForFree": true,
+  "includedInDataCatalog": {
+    "@type": "sc:DataCatalog",
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com"
+  },
+  "creator": {
+    "@type": "sc:Person",
+    "name": "landrecords.us",
+    "url": "/landrecordsus",
+    "image": "https://storage.googleapis.com/kaggle-avatars/thumbnails/31629029-kg.jpeg?t=2026-01-05-22-09-57"
+  },
+  "publisher": {
+    "@type": "sc:Organization",
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com/organizations/kaggle",
+    "image": "https://storage.googleapis.com/kaggle-organizations/4/thumbnail.png"
+  },
+  "thumbnailUrl": "https://storage.googleapis.com/kaggle-datasets-images/9200493/14405554/de608f2b07a0ef990b52b7719db20297/dataset-card.jpeg?t=2026-01-05-21-59-40",
+  "dateModified": "2026-01-05T21:19:45.823",
+  "datePublished": "2026-01-06T01:21:25.7478337",
+  "@type": "sc:Dataset",
+  "name": "US Parcel Layer",
+  "url": "https://www.kaggle.com/datasets/landrecordsus/us-parcel-layer/versions/1",
+  "description": "The [LandRecords.us](https://www.landrecords.us) National Parcel Dataset is a comprehensive, standardized geospatial dataset aggregating **~155M** parcel boundaries and associated land ownership and taxation attributes from various local jurisdictions across the United States. This document outlines the detailed description and technical specifications for this dataset.\n\nThe dataset consists of geometric features representing parcel boundaries and a set of attributes that describe each parcel. Polygons representing the boundaries of individual land parcels for purposes of tax assessment for the jurisdiction in which they reside. These geometries are derived from digitized cadastral maps, surveys, recorded deeds, and legal descriptions of the parcel."
+}

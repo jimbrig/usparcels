@@ -1,0 +1,19 @@
+default:
+  data:
+    src_gpkg_path: "C:/GEODATA/LR_PARCEL_NATIONWIDE_FILE_US_2026_Q1.gpkg"
+    dst_fgb_path: "C:/GEODATA/output/flatgeobuf"
+    dst_parquet_path: "C:/GEODATA/output/parquet"
+    dst_pmtiles_path: "C:/GEODATA/output/pmtiles"
+  tigris:
+    endpoint: "https://t3.storage.dev"
+    bucket: "noclocks-parcels"
+    access_key_id: !expr Sys.getenv("TIGRIS_STORAGE_ACCESS_KEY_ID", "")
+    secret_access_key: !expr Sys.getenv("TIGRIS_STORAGE_SECRET_ACCESS_KEY", "")
+    region: "auto"
+  s3:
+    endpoint: "t3.storage.dev"
+    virtual_hosting: "FALSE"
+    https: "YES"
+    region: "auto"
+  gdal:
+    vsi:

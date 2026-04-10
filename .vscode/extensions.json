@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "ms-azuretools.vscode-containers",
+    "posit.air-vscode",
+    "knisterpeter.vscode-github",
+    "github.vscode-github-actions",
+    "codezombiech.gitignore",
+    "bierner.markdown-preview-github-styles",
+    "esbenp.prettier-vscode",
+    "reditorsupport.r-syntax",
+    "mechatroner.rainbow-csv",
+    "redhat.vscode-xml",
+    "reditorsupport.r",
+    "ms-python.debugpy",
+    "rdebugger.r-debugger",
+    "rangav.vscode-thunder-client"
+  ]
+}

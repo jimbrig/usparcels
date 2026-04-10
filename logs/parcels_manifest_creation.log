@@ -1,0 +1,45 @@
+[2026-04-09 01:21:54] === gpkg manifest creation script === 
+[2026-04-09 01:21:55] gpkg path:  C:/GEODATA/LR_PARCEL_NATIONWIDE_FILE_US_2026_Q1.gpkg 
+[2026-04-09 01:21:55] county manifest out:  C:/GEODATA/manifest_state_county.csv 
+[2026-04-09 01:21:55] state manifest out:  C:/GEODATA/manifest_state_rollup.csv 
+[2026-04-09 01:21:55] opening RO connection... 
+[2026-04-09 01:21:55] setting pragmas... 
+[2026-04-09 01:21:55] running county manifest query... 
+[2026-04-09 01:37:10] county manifest query elapsed seconds:  915 
+[2026-04-09 01:37:10] county manifest rows:  3229 
+[2026-04-09 01:37:10] running state rollup query... 
+[2026-04-09 01:51:44] state rollup query elapsed seconds:  873.8 
+[2026-04-09 01:51:44] state rollup rows:  55 
+[2026-04-09 01:51:44] running sanity checks... 
+[2026-04-09 01:51:44] total features from manifest:  154891095 
+[2026-04-09 01:51:44] total features from gpkg_ogr_contents:  154891095 
+[2026-04-09 01:51:44] bad geoid rows:  0 
+[2026-04-09 01:51:44] bad state fips length rows:  0 
+[2026-04-09 01:51:44] bad county fips length rows:  0 
+[2026-04-09 01:51:44] writing output csv files... 
+[2026-04-09 01:51:44] top 10 states by feature count: 
+      state_fips county_count feature_count null_geom_count min_lrid  max_lrid 
+   1          48          254      13690003               0    13736 154553234 
+   2          06           58      12471618               0     1152 154890986 
+   3          12           67      10940478               0 10039367 151831963 
+   4          39           88       6459730               0        1 154891095 
+   5          42           67       5968015               0   431092 152185813 
+   6          37          100       5756891               0   460462 154346932 
+   7          36           62       5502336               0  1883182 151173000 
+   8          17          102       5469107               0   515776 152905858 
+   9          13          159       4754503               0      561 154889701 
+   10         26           83       4528925               0   143302 151690618 
+      pct_of_total cumulative_pct large_state est_parquet_mb 
+   1         8.838          8.838           1           7833 
+   2         8.052         16.890           1           7136 
+   3         7.063         23.954           1           6260 
+   4         4.170         28.124           1           3696 
+   5         3.853         31.977           1           3415 
+   6         3.717         35.694           1           3294 
+   7         3.552         39.246           1           3148 
+   8         3.531         42.777           1           3129 
+   9         3.070         45.847           1           2721 
+   10        2.924         48.771           1           2591 
+[2026-04-09 01:51:44] disconnecting... 
+[2026-04-09 01:51:45] === done === 
+[2026-04-09 01:51:45] log file:  C:/GEODATA/parcels_manifest_creation.log 

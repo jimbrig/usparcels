@@ -1,0 +1,11 @@
+# https://gdal.org/en/stable/user/configoptions.html#how-to-set-configuration-options
+
+[configoptions]
+
+[credentials]
+
+[.noclocks-parcels-source]
+path=/vsis3/noclocks-parcels-source/
+
+[.noclocks-parcels]
+path=/vsis3/noclocks-parcels/

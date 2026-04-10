@@ -1,0 +1,312 @@
+<OGRVRTDataSource>
+
+  <!-- STATES -->
+  <OGRVRTLayer name="tiger_states">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_state_20m.zip/cb_2024_us_state_20m.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT
+        GEOID AS geoid,
+        GEOIDFQ AS geoidfq,
+        STATEFP AS state_fips,
+        STATENS AS state_gnis,
+        STUSPS AS state_abbr,
+        NAME AS state_name,
+        LSAD AS lsad_code,
+        ALAND AS area_land_m2,
+        AWATER AS area_water_m2
+      FROM cb_2024_us_state_20m
+      WHERE STATEFP NOT IN ('02','15','60','66','69','72','74','78')
+    </SrcSQL>
+    <SrcRegion>POLYGON((-125 24,-66 24,-66 50,-125 50,-125 24))</SrcRegion>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+
+  <OGRVRTLayer name="nation">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_nation_20m.zip/cb_2024_us_nation_20m.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, NAME AS nation_name
+      FROM cb_2024_us_nation_20m
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="region">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_region_20m.zip/cb_2024_us_region_20m.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, REGIONCE AS region_code,
+             NAME AS region_name, NAMELSAL AS lsad_name, LSAD AS lsad_code,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_region_20m
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="division">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_division_20m.zip/cb_2024_us_division_20m.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, DIVISIONCE AS division_code,
+             NAME AS division_name, NAMELSAL AS lsad_name, LSAD AS lsad_code,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_division_20m
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="county">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_county_20m.zip/cb_2024_us_county_20m.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, STATEFP AS state_fips,
+             CONCAT(STATEFP, COUNTYFP) AS county_fips, COUNTYNSL AS county_gnis,
+             NAME AS county_name, NAMELSAL AS lsad_name, LSAD AS lsad_code,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_county_20m
+      WHERE STATEFP NOT IN ('02','15','60','66','69','72','74','78')
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="csa">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_csa_20m.zip/cb_2024_us_csa_20m.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, CSAFP AS csa_fips,
+             NAME AS csa_name, NAMELSAL AS lsad_name, LSAD AS lsad_code,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_csa_20m
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="cbsa">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_cbsa_20m.zip/cb_2024_us_cbsa_20m.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, CSAFP AS csa_fips,
+             CBSAFP AS cbsa_fips, NAME AS cbsa_name, NAMELSAL AS lsad_name,
+             LSAD AS lsad_code, ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_cbsa_20m
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="cousub">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_cousub_500k.zip/cb_2024_us_cousub_500k.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, STATEFP AS state_fips,
+             CONCAT(STATEFP, COUNTYFP) AS county_fips, COUSUBFP AS cousub_fips,
+             COUSUBNS AS cousub_gnis, NAME AS cousub_name, NAMELSAL AS lsad_name,
+             LSAD AS lsad_code, ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_cousub_500k
+      WHERE STATEFP NOT IN ('02','15','60','66','69','72','74','78')
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="metdiv">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_metdiv_20m.zip/cb_2024_us_metdiv_20m.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, CSAFP AS csa_fips,
+             CBSAFP AS cbsa_fips, METDIVFP AS metdiv_fips, NAME AS metdiv_name,
+             NAMELSAL AS lsad_name, LSAD AS lsad_code,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_metdiv_20m
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="tract">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_tract_5m.zip/cb_2024_us_tract_5m.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, STATEFP AS state_fips,
+             CONCAT(STATEFP, COUNTYFP) AS county_fips, TRACTCE AS tract_code,
+             NAME AS tract_name, NAMELSAL AS lsad_name, LSAD AS lsad_code,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_tract_5m
+      WHERE STATEFP NOT IN ('02','15','60','66','69','72','74','78')
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="bg">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_bg_500k.zip/cb_2024_us_bg_500k.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, STATEFP AS state_fips,
+             STATEFP || COUNTYFP AS county_fips, TRACTCE AS tract_code,
+             BLKGRPCE AS block_group_code, NAME AS block_group_name,
+             NAMELSAL AS lsad_name, LSAD AS lsad_code,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_bg_500k
+      WHERE STATEFP NOT IN ('02','15','60','66','69','72','74','78')
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="unsd">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_unsd_500k.zip/cb_2024_us_unsd_500k.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, STATEFP AS state_fips,
+             UNSDLEA AS district_lea_code, NAME AS district_name,
+             'unified' AS district_type, LOGRADE AS low_grade, HIGRADE AS high_grade,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_unsd_500k
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="elsd">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_elsd_500k.zip/cb_2024_us_elsd_500k.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, STATEFP AS state_fips,
+             ELSDLEA AS district_lea_code, NAME AS district_name,
+             'elementary' AS district_type, LOGRADE AS low_grade, HIGRADE AS high_grade,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_elsd_500k
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="scsd">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_scsd_500k.zip/cb_2024_us_scsd_500k.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, STATEFP AS state_fips,
+             SCSDLEA AS district_lea_code, NAME AS district_name,
+             'secondary' AS district_type, LOGRADE AS low_grade, HIGRADE AS high_grade,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_scsd_500k
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="cd119">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_cd119_20m.zip/cb_2024_us_cd119_20m.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, STATEFP AS state_fips,
+             CD119FP AS cd_code, CAST(CDSESSN AS INTEGER) AS congress_session,
+             NAME AS cd_name, NAMELSAL AS lsad_name, LSAD AS lsad_code,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM cb_2024_us_cd119_20m
+      WHERE STATEFP NOT IN ('02','15','60','66','69','72','74','78')
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <!-- Full TIGER/Line — note 20-suffix field names -->
+
+  <OGRVRTLayer name="block">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/TIGER2024/TABBLOCK20/tl_2024_13_tabblock20.zip/tl_2024_13_tabblock20.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID20 AS geoid, GEOIDFQ20 AS geoidfq, STATEFP20 AS state_fips,
+             STATEFP20 || COUNTYFP20 AS county_fips, TRACTCE20 AS tract_code,
+             BLOCKCE20 AS block_code, NAME20 AS block_name,
+             MTFCC20 AS maftiger_code, UR20 AS urban_rural_code,
+             UACE20 AS urban_area_code, FUNCSTAT20 AS functional_status_code,
+             HOUSING20 AS housing_units, POP20 AS population,
+             ALAND20 AS area_land_m2, AWATER20 AS area_water_m2
+      FROM tl_2024_13_tabblock20
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="place">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/TIGER2024/PLACE/tl_2024_13_place.zip/tl_2024_13_place.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID AS geoid, GEOIDFQ AS geoidfq, STATEFP AS state_fips,
+             PLACEFP AS place_fips, PLACENS AS place_gnis, NAME AS place_name,
+             NAMELSAL AS lsad_name, LSAD AS lsad_code, CLASSFP AS class_fips,
+             PCICBSA AS cbsa_indicator, MTFCC AS maftiger_code,
+             FUNCSTAT AS functional_status_code,
+             INTPTLAT AS latitude, INTPTLON AS longitude,
+             ALAND AS area_land_m2, AWATER AS area_water_m2
+      FROM tl_2024_13_place
+      WHERE STATEFP = '13'
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="zcta">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/TIGER2024/ZCTA520/tl_2024_us_zcta520.zip/tl_2024_us_zcta520.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID20 AS geoid, GEOIDFQ20 AS geoidfq, ZCTA5CE20 AS zcta_code,
+             CLASSFP20 AS class_fips, MTFCC20 AS maftiger_code,
+             FUNCSTAT20 AS functional_status_code,
+             ALAND20 AS area_land_m2, AWATER20 AS area_water_m2
+      FROM tl_2024_us_zcta520
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="uac">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/TIGER2024/UAC20/tl_2024_us_uac20.zip/tl_2024_us_uac20.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT GEOID20 AS geoid, GEOIDFQ20 AS geoidfq, UACE20 AS urban_area_code,
+             NAME20 AS urban_area_name, NAMELSAL20 AS lsad_name, LSAD20 AS lsad_code,
+             MTFCC20 AS maftiger_code, FUNCSTAT20 AS functional_status_code,
+             ALAND20 AS area_land_m2, AWATER20 AS area_water_m2,
+             INTPTLAT20 AS latitude, INTPTLON20 AS longitude
+      FROM tl_2024_us_uac20
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="primary_roads">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/TIGER2024/PRIMARYROADS/tl_2024_us_primaryroads.zip/tl_2024_us_primaryroads.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT LINEARID AS linear_id, FULLNAME AS full_name,
+             RTTYP AS route_type_code, MTFCC AS maftiger_code
+      FROM tl_2024_us_primaryroads
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbLineString</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="primary_secondary_roads">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/TIGER2024/PRISECROADS/tl_2024_13_prisecroads.zip/tl_2024_13_prisecroads.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT LINEARID AS linear_id, FULLNAME AS full_name,
+             RTTYP AS route_type_code, MTFCC AS maftiger_code
+      FROM tl_2024_13_prisecroads
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbLineString</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="roads">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/TIGER2024/ROADS/tl_2024_13001_roads.zip/tl_2024_13001_roads.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT LINEARID AS linear_id, FULLNAME AS full_name,
+             RTTYP AS route_type_code, MTFCC AS maftiger_code
+      FROM tl_2024_13001_roads
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbLineString</GeometryType>
+  </OGRVRTLayer>
+
+  <OGRVRTLayer name="rails">
+    <SrcDataSource>/vsizip//vsicurl/https://www2.census.gov/geo/tiger/TIGER2024/RAILS/tl_2024_us_rails.zip/tl_2024_us_rails.shp</SrcDataSource>
+    <SrcSQL dialect="OGRSQL">
+      SELECT LINEARID AS linear_id, FULLNAME AS full_name, MTFCC AS maftiger_code
+      FROM tl_2024_us_rails
+    </SrcSQL>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryType>wkbLineString</GeometryType>
+  </OGRVRTLayer>
+
+</OGRVRTDataSource>

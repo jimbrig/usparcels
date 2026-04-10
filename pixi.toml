@@ -1,0 +1,12 @@
+[workspace]
+authors = ["Jimmy Briggs <jimmy.briggs@noclocks.dev>"]
+channels = ["conda-forge"]
+name = "usparcels"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+gdal = ">=3.12.3,<4"
+libgdal-arrow-parquet = ">=3.12.3,<4"

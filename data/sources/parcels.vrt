@@ -1,0 +1,26 @@
+<!-- PARCELS VRT SOURCE DATA REFERENCES -->
+<OGRVRTDataSource>
+  <!-- local reference from WSL --> 
+  <OGRVRTLayer name="parcels-local-wsl">
+    <SrcDataSource>/mnt/c/GEODATA/LR_PARCEL_NATIONWIDE_FILE_US_2026_Q1.gpkg</SrcDataSource>
+    <SrcLayer>lr_parcel_us</SrcLayer>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+  <!-- local reference from windows -->
+  <OGRVRTLayer name="parcels-local-windows">
+    <SrcDataSource>C:/GEODATA/LR_PARCEL_NATIONWIDE_FILE_US_2026_Q1.gpkg</SrcDataSource>
+    <SrcLayer>lr_parcel_us</SrcLayer>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+  <!-- cloud blob storage reference -->
+  <OGRVRTLayer name="parcels-cloud">
+    <SrcDataSource>/vsis3/noclocks-parcels-source/LR_PARCEL_NATIONWIDE_FILE_US_2026_Q1.gpkg</SrcDataSource>
+    <SrcLayer>lr_parcel_us</SrcLayer>
+    <GeometryType>wkbMultiPolygon</GeometryType>
+  </OGRVRTLayer>
+  <!-- canonical alias - switch this line to change the active source -->
+  <OGRVRTLayer name="parcels">
+    <SrcDataSource>data/sources/parcels.vrt</SrcDataSource>
+    <SrcLayer>parcels-local-windows</SrcLayer>
+  </OGRVRTLayer>
+</OGRVRTDataSource>

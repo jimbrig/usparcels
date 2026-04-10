@@ -1,0 +1,3 @@
+[2026-04-09T02:22:18] starting GA FGB extraction
+[2026-04-09T02:26:17] done, exit code: 0
+-rw-r--r-- 1 jimmy jimmy 2.9G Apr  9 02:26 data/output/flatgeobuf/state=13/parcels.fgb

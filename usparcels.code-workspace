@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "yaml.customTags": ["!expr scalar"],
+    "[r]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "Posit.air-vscode",
+    },
+  }
+}

@@ -1,0 +1,4 @@
+[2026-04-09T23:46:14] starting TX FGB extraction (with bbox)
+Warning 1: disk I/O error: this file is a WAL-enabled database. It cannot be opened because it is presumably read-only or in a read-only directory. Retrying with IMMUTABLE=YES open option
+[2026-04-10T00:03:01] done, exit code: 0
+-rw-r--r-- 1 jimmy jimmy 9.1G Apr 10 00:03 data/output/flatgeobuf/state=48/parcels.fgb
