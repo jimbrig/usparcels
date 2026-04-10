@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 - *(changelog)* Install git-cliff v2.6 and add README
 - *(data)* Add .gitkeep placeholders for output directories
 - Keep single state example hive partition folders for reference only
+- Cleanup unused output folders
 
 ### 🛡️ Security
 
@@ -16,6 +17,7 @@ All notable changes to this project will be documented in this file.
 
 ### [chore]
 
+- Update changelog
 - Update changelog
 - Update changelog
 
